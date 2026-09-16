@@ -1,0 +1,312 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+    line-height: 1.6;
+}
+
+#about-toggle,
+input[name="section"] {
+    display: none;
+}
+
+#intro {
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    background-color: white;
+}
+
+.intro-content h1 {
+    font-size: 55px;
+    margin-bottom: 10px;
+}
+
+.intro-content p {
+    font-size: 18px;
+    margin-bottom: 25px;
+}
+
+.about-button {
+    display: inline-block;
+
+    padding: 12px 25px;
+
+    border-radius: 5px;
+
+    background-color: #333;
+    color: white;
+
+    font-size: 16px;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+.about-button:hover {
+    background-color: #555;
+}
+
+#website {
+    display: none;
+}
+
+#about-toggle:checked ~ #website {
+    display: block;
+}
+
+#about-toggle:checked ~ #intro {
+    display: none;
+}
+
+
+header {
+    background-color: #333;
+    color: white;
+
+    padding: 15px 8%;
+}
+
+nav {
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav h2 {
+    font-size: 22px;
+}
+
+.nav-buttons {
+    display: flex;
+    gap: 8px;
+}
+
+.nav-buttons label {
+    padding: 8px 12px;
+
+    color: white;
+
+    font-size: 15px;
+
+    border-radius: 5px;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+.nav-buttons label:hover {
+    background-color: #555;
+}
+
+#home-tab:checked ~ header .nav-buttons label[for="home-tab"],
+#profile-tab:checked ~ header .nav-buttons label[for="profile-tab"],
+#gallery-tab:checked ~ header .nav-buttons label[for="gallery-tab"],
+#skills-tab:checked ~ header .nav-buttons label[for="skills-tab"],
+#contact-tab:checked ~ header .nav-buttons label[for="contact-tab"] {
+
+    background-color: white;
+    color: #333;
+}
+
+.page-section {
+    min-height: 70vh;
+
+    padding: 60px 8%;
+
+    text-align: center;
+
+    display: none;
+}
+
+.page-section h2 {
+    font-size: 30px;
+    margin-bottom: 30px;
+}
+
+#home-tab:checked ~ main #home {
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+}
+
+#profile-tab:checked ~ main #profile {
+    display: block;
+}
+
+#gallery-tab:checked ~ main #gallery {
+    display: block;
+}
+
+#skills-tab:checked ~ main #skills {
+    display: block;
+}
+
+#contact-tab:checked ~ main #contact {
+    display: block;
+}
+
+#home {
+    background-color: white;
+}
+
+#home h1 {
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+
+.profile {
+    max-width: 800px;
+
+    margin: auto;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 40px;
+
+    text-align: left;
+}
+
+.profile img {
+    width: 200px;
+    height: 200px;
+
+    object-fit: cover;
+
+    border-radius: 50%;
+}
+
+.profile h3 {
+    font-size: 24px;
+
+    margin-bottom: 10px;
+}
+
+.gallery {
+    max-width: 900px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 20px;
+}
+
+.gallery img {
+    width: 100%;
+    height: 300px;
+
+    object-fit: contain;
+
+    background-color: white;
+
+    border-radius: 5px;
+}
+
+.skills {
+    max-width: 900px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 20px;
+}
+
+.skill {
+    background-color: white;
+
+    padding: 25px;
+
+    border-radius: 5px;
+}
+
+.skill h3 {
+    margin-bottom: 10px;
+}
+
+.contact {
+    max-width: 500px;
+
+    margin: auto;
+
+    background-color: white;
+
+    padding: 25px;
+
+    border-radius: 5px;
+}
+
+.contact p {
+    margin: 10px 0;
+}
+
+footer {
+    background-color: #333;
+
+    color: white;
+
+    text-align: center;
+
+    padding: 20px;
+}
+
+@media (max-width: 700px) {
+
+    nav {
+        flex-direction: column;
+
+        gap: 15px;
+    }
+
+    .nav-buttons {
+        flex-wrap: wrap;
+
+        justify-content: center;
+    }
+
+    .intro-content h1 {
+        font-size: 40px;
+    }
+
+    .profile {
+        flex-direction: column;
+
+        text-align: center;
+    }
+
+    .gallery {
+        grid-template-columns: 1fr;
+    }
+
+    .skills {
+        grid-template-columns: 1fr;
+    }
+}
